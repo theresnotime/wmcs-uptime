@@ -53,7 +53,7 @@ class Bark extends NotificationProvider {
     appendAdditionalParameters(postUrl) {
         // grouping all our notifications
         postUrl += "?group=" + barkNotificationGroup;
-        // set icon to uptime kuma icon, 11kb should be fine
+        // set icon to WMCS Uptime icon, 11kb should be fine
         postUrl += "&icon=" + barkNotificationAvatar;
         // picked a sound, this should follow system's mute status when arrival
         postUrl += "&sound=" + barkNotificationSound;

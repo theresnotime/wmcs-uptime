@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         icon(icon) {
-            if (icon === "/icon.svg") {
+            if (icon === "/240px-Wikimedia_Cloud_Services_logo.png") {
                 return icon;
             } else {
                 return getResBaseURL() + icon;

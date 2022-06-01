@@ -4,7 +4,7 @@
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/louislam?label=GitHub%20Sponsors)](https://github.com/sponsors/louislam)
 
 <div align="center" width="100%">
-    <img src="./public/icon.svg" width="128" alt="" />
+    <img src="./public/240px-Wikimedia_Cloud_Services_logo.png" width="128" alt="" />
 </div>
 
 It is a self-hosted monitoring tool like "Uptime Robot".
