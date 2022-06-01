@@ -129,7 +129,7 @@
         "@actions/github": "~5.0.1",
         "@babel/eslint-parser": "~7.17.0",
         "@babel/preset-env": "^7.15.8",
-        "@types/bootstrap": "~5.1.9",
+        "@types/bootstrap": "~5.1.12",
         "@vitejs/plugin-legacy": "~1.6.4",
         "@vitejs/plugin-vue": "~1.9.4",
         "@vue/compiler-sfc": "~3.2.31",
