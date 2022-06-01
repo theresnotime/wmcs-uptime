@@ -3,9 +3,9 @@
         <div class="form">
             <form @submit.prevent="submit">
                 <div>
-                    <object width="64" height="64" data="/icon.svg" />
+                    <object width="64" height="64" data="/240px-Wikimedia_Cloud_Services_logo.png" />
                     <div style="font-size: 28px; font-weight: bold; margin-top: 5px;">
-                        Uptime Kuma
+                        WMCS Uptime
                     </div>
                 </div>
 

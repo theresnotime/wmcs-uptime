@@ -180,7 +180,7 @@ export default {
     "Status Page": "صفحه وضعیت",
     "Status Pages": "صفحه وضعیت",
     "Go to Dashboard": "رفتن به پیشخوان",
-    "Uptime Kuma": "آپتایم کوما",
+    "WMCS Uptime": "آپتایم کوما",
     records: "مورد",
     "One record": "یک مورد",
     Info: "اطلاعات",

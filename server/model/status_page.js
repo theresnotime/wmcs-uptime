@@ -248,7 +248,7 @@ class StatusPage extends BeanModel {
      */
     getIcon() {
         if (!this.icon) {
-            return "/icon.svg";
+            return "/240px-Wikimedia_Cloud_Services_logo.png";
         } else {
             return this.icon;
         }

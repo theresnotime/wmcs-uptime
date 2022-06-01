@@ -265,7 +265,7 @@
                 <Editable v-model="config.footerText" tag="div" :contenteditable="enableEditMode" :noNL="false" class="alert-heading p-2" />
 
                 <p v-if="config.showPoweredBy">
-                    {{ $t("Powered by") }} <a target="_blank" href="https://github.com/louislam/uptime-kuma">{{ $t("Uptime Kuma" ) }}</a>
+                    {{ $t("Powered by") }} <a target="_blank" href="https://github.com/louislam/uptime-kuma">{{ $t("WMCS Uptime" ) }}</a>
                 </p>
             </footer>
         </div>
@@ -350,7 +350,7 @@ export default {
             incident: null,
             previousIncident: null,
             showImageCropUpload: false,
-            imgDataUrl: "/icon.svg",
+            imgDataUrl: "/240px-Wikimedia_Cloud_Services_logo.png",
             loadedTheme: false,
             loadedData: false,
             baseURL: "",

@@ -1,4 +1,4 @@
-console.log("== Uptime Kuma Reset Password Tool ==");
+console.log("== WMCS Uptime Reset Password Tool ==");
 
 const Database = require("../server/database");
 const { R } = require("redbean-node");
