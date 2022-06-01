@@ -36,7 +36,9 @@ class StatusPage extends BeanModel {
      */
     static async renderHTML(indexHTML, statusPage) {
         const $ = cheerio.load(indexHTML);
-        const description155 = statusPage.description.substring(0, 155);
+        // TODO: Fix this
+        //const description155 = statusPage.description.substring(0, 155);
+        const description155 = statusPage.title;
 
         $("title").text(statusPage.title);
         $("meta[name=description]").attr("content", description155);
