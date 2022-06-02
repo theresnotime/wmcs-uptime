@@ -1,5 +1,5 @@
 # WMCS Uptime
-[![Auto Test](https://github.com/theresnotime/wmcs-uptime/actions/workflows/auto-test.yml/badge.svg)](https://github.com/theresnotime/wmcs-uptime/actions/workflows/auto-test.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=theresnotime_uptime-kuma&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=theresnotime_uptime-kuma) [![CodeQL](https://github.com/theresnotime/wmcs-uptime/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/theresnotime/wmcs-uptime/actions/workflows/codeql-analysis.yml)
+[![Auto Test](https://github.com/theresnotime/wmcs-uptime/actions/workflows/auto-test.yml/badge.svg)](https://github.com/theresnotime/wmcs-uptime/actions/workflows/auto-test.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=theresnotime_wmcs-uptime&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=theresnotime_uptime-kuma) [![CodeQL](https://github.com/theresnotime/wmcs-uptime/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/theresnotime/wmcs-uptime/actions/workflows/codeql-analysis.yml)
 
 <div align="center" width="100%">
     <img src="./public/240px-Wikimedia_Cloud_Services_logo.png" width="128" alt="" style="padding-bottom: 1rem;" />
