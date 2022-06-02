@@ -21,3 +21,9 @@ dev:
 	npm install
 	npm run build
 	node server/server.js
+
+.PHONY: ci-no-git
+ci-no-git:
+	npm install
+	npm run lint
+	npm run test-with-build
