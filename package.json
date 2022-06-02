@@ -94,7 +94,7 @@
         "limiter": "^2.1.0",
         "mqtt": "^4.2.8",
         "node-cloudflared-tunnel": "~1.0.9",
-        "nodemailer": "~6.6.5",
+        "nodemailer": "~6.7.5",
         "notp": "~2.0.3",
         "password-hash": "~1.2.2",
         "postcss-rtlcss": "~3.4.1",
