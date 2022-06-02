@@ -13,8 +13,16 @@ const badgeConstants = {
     defaultUptimeLabelSuffix: "h",
 };
 
+const casSettings = {
+    cas_host: 'idp.wikimedia.org',
+    login_service: '/login',
+    cas_port: 443,
+    service: 'https://uptime.wmcloud.org'
+};
+
 module.exports = {
     args,
     demoMode,
     badgeConstants,
+    casSettings,
 };
