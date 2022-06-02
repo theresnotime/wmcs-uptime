@@ -1,0 +1,9 @@
+BEGIN TRANSACTION;
+
+--
+ALTER TABLE user
+    ADD ldap_uid VARCHAR(20);
+ALTER TABLE user
+    ADD is_sso BOOLEAN default 0;
+
+END TRANSACTION;
