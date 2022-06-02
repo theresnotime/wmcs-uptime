@@ -11,6 +11,7 @@ let interval;
 exports.startInterval = () => {
     let check = async () => {
         try {
+            // TODO: Move this check URL
             const res = await axios.get("https://uptime.kuma.pet/version");
 
             // For debug
