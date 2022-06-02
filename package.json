@@ -10,6 +10,7 @@
         "node": "14.* || >=16.*"
     },
     "scripts": {
+        "test-sql": "sql-lint db/ --config .sql-lint --verbose",
         "install-legacy": "npm install",
         "update-legacy": "npm update",
         "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
@@ -109,6 +110,7 @@
         "socket.io": "~4.5.1",
         "socket.io-client": "~4.5.1",
         "socks-proxy-agent": "^7.0.0",
+        "sql-lint": "^0.0.19",
         "tar": "^6.1.11",
         "tcp-ping": "~0.1.1",
         "thirty-two": "~1.0.2",

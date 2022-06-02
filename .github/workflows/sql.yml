@@ -1,0 +1,29 @@
+name: SQL
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  sql:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    strategy:
+      fail-fast: true
+      matrix:
+        node: [ 17, 18, 'latest' ]
+
+    steps:
+    - run: git config --global core.autocrlf false  # Mainly for Windows
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+        cache: 'npm'
+    - run: npm install
+    - run: npm run test-sql
