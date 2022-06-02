@@ -233,7 +233,7 @@ class Monitor extends BeanModel {
                         timeout: this.interval * 1000 * 0.8,
                         headers: {
                             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-                            "User-Agent": "Uptime-Kuma/" + version,
+                            "User-Agent": "WMCS-Uptime/" + version,
                             ...(this.headers ? JSON.parse(this.headers) : {}),
                             ...(basicAuthHeader),
                         },
@@ -409,7 +409,7 @@ class Monitor extends BeanModel {
                         timeout: this.interval * 1000 * 0.8,
                         headers: {
                             "Accept": "*/*",
-                            "User-Agent": "Uptime-Kuma/" + version,
+                            "User-Agent": "WMCS-Uptime/" + version,
                         },
                         httpsAgent: new https.Agent({
                             maxCachedSessions: 0,      // Use Custom agent to disable session reuse (https://github.com/nodejs/node/issues/3940)

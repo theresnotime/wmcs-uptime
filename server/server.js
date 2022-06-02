@@ -20,6 +20,7 @@ const session = require("express-session");
 const args = require("args-parser")(process.argv);
 const { sleep, log, getRandomInt, genSecret, isDev } = require("../src/util");
 const config = require("./config");
+const secret = require("./secret");
 
 log.info("server", "Welcome to WMCS Uptime");
 log.debug("server", "Arguments");
@@ -140,7 +141,7 @@ app.use(function (req, res, next) {
     next();
 });
 const sess = {
-    secret: "keyboard cat", // TODO: Change this! https://github.com/theresnotime/wmcs-uptime/issues/27
+    secret: secret.secrets.session_secret,
     cookie: {
         secure: "auto"
     }
