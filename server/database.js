@@ -43,6 +43,7 @@ class Database {
      */
     static patchList = {
         "patch-unified-wmcs.sql": true,
+        "patch-sso-wmcs.sql": true,
     };
 
     /**
