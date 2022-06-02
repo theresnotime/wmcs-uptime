@@ -1,10 +1,10 @@
 {
-    "name": "uptime-kuma",
-    "version": "1.16.1",
+    "name": "wmcs-uptime",
+    "version": "2.0.0",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/louislam/uptime-kuma.git"
+        "url": "https://github.com/theresnotime/wmcs-uptime.git"
     },
     "engines": {
         "node": "14.* || >=16.*"
