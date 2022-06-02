@@ -42,22 +42,7 @@ class Database {
      *      { parents: []}: Need parents before add it
      */
     static patchList = {
-        "patch-setting-value-type.sql": true,
-        "patch-improve-performance.sql": true,
-        "patch-2fa.sql": true,
-        "patch-add-retry-interval-monitor.sql": true,
-        "patch-incident-table.sql": true,
-        "patch-group-table.sql": true,
-        "patch-monitor-push_token.sql": true,
-        "patch-http-monitor-method-body-and-headers.sql": true,
-        "patch-2fa-invalidate-used-token.sql": true,
-        "patch-notification_sent_history.sql": true,
-        "patch-monitor-basic-auth.sql": true,
-        "patch-status-page.sql": true,
-        "patch-proxy.sql": true,
-        "patch-monitor-expiry-notification.sql": true,
-        "patch-status-page-footer-css.sql": true,
-        "patch-added-mqtt-monitor.sql": true,
+        "patch-unified-wmcs.sql": true,
     };
 
     /**
