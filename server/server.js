@@ -15,6 +15,8 @@ if (nodeVersion < requiredVersion) {
     process.exit(-1);
 }
 
+const session = require("express-session");
+
 const args = require("args-parser")(process.argv);
 const { sleep, log, getRandomInt, genSecret, isDev } = require("../src/util");
 const config = require("./config");
@@ -137,6 +139,11 @@ app.use(function (req, res, next) {
     res.removeHeader("X-Powered-By");
     next();
 });
+const sess = {
+    secret: "keyboard cat",
+    cookie: {}
+};
+app.use(session(sess));
 
 /**
  * Use for decode the auth object
@@ -215,7 +222,8 @@ let needSetup = false;
                 "cas_host": config.casSettings.cas_host,
                 "login_service": config.casSettings.login_service,
                 "cas_port": config.casSettings.cas_port,
-                "service": config.casSettings.service
+                "service": config.casSettings.service,
+                "validation_service": config.casSettings.validation_service,
             }
         )
     );
@@ -226,7 +234,8 @@ let needSetup = false;
                 "cas_host": config.casSettings.cas_host,
                 "login_service": config.casSettings.login_service,
                 "cas_port": config.casSettings.cas_port,
-                "service": config.casSettings.service
+                "service": config.casSettings.service,
+                "validation_service": config.casSettings.validation_service,
             }
         )
     );
