@@ -32,14 +32,16 @@ ci-no-git:
 start-pm2:
 	git fetch --prune
 	git pull
-	npm install
+	export NODE_ENV=production
+	npm install --verbose
 	npm run build
-	pm2 start server/server.js --name wmcs-uptime
+	pm2 start server/server.js --name wmcs-uptime --update-env --deep-monitoring --log ~/wmcs-uptime.log
 
 .PHONY: deploy-pm2
 deploy-pm2:
 	git fetch --prune
 	git pull
-	npm install
+	export NODE_ENV=production
+	npm install --verbose
 	npm run build
-	pm2 restart wmcs-uptime
+	pm2 restart wmcs-uptime --update-env
