@@ -11,15 +11,13 @@ on:
 jobs:
   auto-test:
     needs: [ check-linters ]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     timeout-minutes: 15
 
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-latest]
-        node: [ 17, 18, 19, 20 ]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        node: [ 17, 18, 'latest' ]
 
     steps:
     - run: git config --global core.autocrlf false  # Mainly for Windows
