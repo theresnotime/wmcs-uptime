@@ -83,7 +83,6 @@ const passwordHash = require("./password-hash");
 const checkVersion = require("./check-version");
 log.info("server", "Version: " + checkVersion.version);
 
-
 // If host is omitted, the server will accept connections on the unspecified IPv6 address (::) when IPv6 is available and the unspecified IPv4 address (0.0.0.0) otherwise.
 // Dual-stack support for (::)
 // Also read HOST if not FreeBSD, as HOST is a system environment variable in FreeBSD
@@ -107,7 +106,7 @@ const twoFAVerifyOptions = {
     "time": 30
 };
 
-const cas_validate = require('@jmarca/cas_validate');
+const casValidate = require("@jmarca/cas_validate");
 
 /**
  * Run unit test after the server is ready
@@ -179,7 +178,7 @@ let needSetup = false;
             response.redirect("/status/" + exports.entryPage.replace("statusPage-", ""));
 
         } else {
-            
+
             response.redirect("/dashboard");
         }
     });
@@ -210,22 +209,24 @@ let needSetup = false;
     app.use("/", express.static("dist"));
 
     // CAS
-    app.use(cas_validate.ticket(
-        {
-            'cas_host': config.casSettings.cas_host,
-            'login_service': config.casSettings.login_service,
-            'cas_port': config.casSettings.cas_port,
-            'service': config.casSettings.service
-        }
-    ));
+    app.use(
+        casValidate.ticket(
+            {
+                "cas_host": config.casSettings.cas_host,
+                "login_service": config.casSettings.login_service,
+                "cas_port": config.casSettings.cas_port,
+                "service": config.casSettings.service
+            }
+        )
+    );
     app.get(
         "/login",
-        cas_validate.check_or_redirect(
+        casValidate.check_or_redirect(
             {
-                'cas_host': config.casSettings.cas_host,
-                'login_service': config.casSettings.login_service,
-                'cas_port': config.casSettings.cas_port,
-                'service': config.casSettings.service
+                "cas_host": config.casSettings.cas_host,
+                "login_service": config.casSettings.login_service,
+                "cas_port": config.casSettings.cas_port,
+                "service": config.casSettings.service
             }
         )
     );
@@ -315,7 +316,6 @@ let needSetup = false;
             log.info("auth", `Login by username + password. IP=${getClientIp(socket)}`);
 
             // CAS
-            
 
             // Checking
             if (typeof callback !== "function") {
