@@ -83,6 +83,7 @@ const passwordHash = require("./password-hash");
 const checkVersion = require("./check-version");
 log.info("server", "Version: " + checkVersion.version);
 
+
 // If host is omitted, the server will accept connections on the unspecified IPv6 address (::) when IPv6 is available and the unspecified IPv4 address (0.0.0.0) otherwise.
 // Dual-stack support for (::)
 // Also read HOST if not FreeBSD, as HOST is a system environment variable in FreeBSD
@@ -105,6 +106,8 @@ const twoFAVerifyOptions = {
     "window": 1,
     "time": 30
 };
+
+const cas_validate = require('@jmarca/cas_validate');
 
 /**
  * Run unit test after the server is ready
@@ -164,6 +167,7 @@ let needSetup = false;
     // Entry Page
     app.get("/", async (request, response) => {
         log.debug("entry", `Request Domain: ${request.hostname}`);
+        log.info("server", request.headers);
 
         if (request.hostname in StatusPage.domainMappingList) {
             log.debug("entry", "This is a status page domain");
@@ -175,6 +179,7 @@ let needSetup = false;
             response.redirect("/status/" + exports.entryPage.replace("statusPage-", ""));
 
         } else {
+            
             response.redirect("/dashboard");
         }
     });
@@ -203,6 +208,27 @@ let needSetup = false;
     app.get("/metrics", basicAuth, prometheusAPIMetrics());
 
     app.use("/", express.static("dist"));
+
+    // CAS
+    app.use(cas_validate.ticket(
+        {
+            'cas_host': config.casSettings.cas_host,
+            'login_service': config.casSettings.login_service,
+            'cas_port': config.casSettings.cas_port,
+            'service': config.casSettings.service
+        }
+    ));
+    app.get(
+        "/login",
+        cas_validate.check_or_redirect(
+            {
+                'cas_host': config.casSettings.cas_host,
+                'login_service': config.casSettings.login_service,
+                'cas_port': config.casSettings.cas_port,
+                'service': config.casSettings.service
+            }
+        )
+    );
 
     // ./data/upload
     app.use("/upload", express.static(Database.uploadDir));
@@ -287,6 +313,9 @@ let needSetup = false;
 
         socket.on("login", async (data, callback) => {
             log.info("auth", `Login by username + password. IP=${getClientIp(socket)}`);
+
+            // CAS
+            
 
             // Checking
             if (typeof callback !== "function") {
