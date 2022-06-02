@@ -4,6 +4,7 @@ ci:
 	git pull
 	npm install
 	npm run lint
+	npm run test-sql
 	npm run test-with-build
 
 .PHONY: test
@@ -12,6 +13,7 @@ test:
 	git pull
 	npm install
 	npm run lint
+	npm run test-sql
 	npm test
 
 .PHONY: dev
@@ -19,6 +21,7 @@ dev:
 	git fetch --prune
 	git pull
 	npm install
+	npm run test-sql
 	npm run build
 	node server/server.js
 
@@ -26,6 +29,7 @@ dev:
 ci-no-git:
 	npm install
 	npm run lint
+	npm run test-sql
 	npm run test-with-build
 
 .PHONY: start-pm2
@@ -34,6 +38,7 @@ start-pm2:
 	git pull
 	export NODE_ENV=production
 	npm install --verbose
+	npm run test-sql
 	npm run build
 	pm2 start server/server.js --name wmcs-uptime --update-env --deep-monitoring --log ~/wmcs-uptime.log
 
@@ -43,5 +48,6 @@ deploy-pm2:
 	git pull
 	export NODE_ENV=production
 	npm install --verbose
+	npm run test-sql
 	npm run build
 	pm2 restart wmcs-uptime --update-env
