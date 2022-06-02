@@ -30,6 +30,7 @@ jobs:
         node-version: ${{ matrix.node }}
         cache: 'npm'
     - run: npm install
+    - run: cp server/secret-example.js server/secret.js
     - run: npm run build
     - run: npm test
       env:
@@ -49,4 +50,5 @@ jobs:
         node-version: 18
         cache: 'npm'
     - run: npm install
+    - run: cp server/secret-example.js server/secret.js
     - run: npm run lint
