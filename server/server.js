@@ -140,9 +140,13 @@ app.use(function (req, res, next) {
     next();
 });
 const sess = {
-    secret: "keyboard cat",
-    cookie: {}
+    secret: "keyboard cat", // TODO: Change this! https://github.com/theresnotime/wmcs-uptime/issues/27
+    cookie: {
+        secure: "auto"
+    }
 };
+
+app.set("trust proxy", 1);
 app.use(session(sess));
 
 /**
