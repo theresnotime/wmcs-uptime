@@ -27,3 +27,19 @@ ci-no-git:
 	npm install
 	npm run lint
 	npm run test-with-build
+
+.PHONY: start-pm2
+start-pm2:
+	git fetch --prune
+	git pull
+	npm install
+	npm run build
+	pm2 start server/server.js --name wmcs-uptime
+
+.PHONY: deploy-pm2
+deploy-pm2:
+	git fetch --prune
+	git pull
+	npm install
+	npm run build
+	pm2 restart wmcs-uptime
