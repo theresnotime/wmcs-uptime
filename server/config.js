@@ -14,10 +14,11 @@ const badgeConstants = {
 };
 
 const casSettings = {
-    cas_host: "idp.wikimedia.org",
+    cas_host: "idp.wmcloud.org",
     login_service: "/login",
     cas_port: 443,
-    service: "https://uptime.wmcloud.org"
+    service: "https://uptime.wmcloud.org",
+    validation_service: "/serviceValidate"
 };
 
 module.exports = {
