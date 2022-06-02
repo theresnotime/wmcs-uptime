@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "notificationList": [],
+    "monitorList": [
+        {
+            "id": 1,
+            "name": "google.co.uk",
+            "url": "https://www.google.co.uk",
+            "method": "GET",
+            "hostname": null,
+            "port": "",
+            "maxretries": 0,
+            "weight": 2000,
+            "active": 1,
+            "type": "http",
+            "interval": 20,
+            "retryInterval": 20,
+            "keyword": null,
+            "expiryNotification": true,
+            "ignoreTls": false,
+            "upsideDown": false,
+            "maxredirects": 10,
+            "accepted_statuscodes": [
+                "200-299"
+            ],
+            "dns_resolve_type": "A",
+            "dns_resolve_server": "1.1.1.1",
+            "dns_last_result": null,
+            "proxyId": null,
+            "notificationIDList": {},
+            "tags": [],
+            "mqttUsername": "",
+            "mqttPassword": "",
+            "mqttTopic": "",
+            "mqttSuccessMessage": "",
+            "headers": null,
+            "body": null,
+            "basic_auth_user": null,
+            "basic_auth_pass": null,
+            "pushToken": null
+        }
+    ]
+}
