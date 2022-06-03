@@ -82,12 +82,8 @@ export default {
             let protocol = (location.protocol === "https:") ? "wss://" : "ws://";
 
             let wsHost;
-            const env = process.env.NODE_ENV || "production";
-            if (env === "development" || localStorage.dev === "dev") {
-                wsHost = protocol + location.hostname + ":3001";
-            } else {
-                wsHost = protocol + location.host;
-            }
+            const wsport = process.env.WS_PORT || 3001;
+            wsHost = protocol + location.hostname + ":" + wsport;
 
             socket = io(wsHost, {
                 transports: [ "websocket" ],

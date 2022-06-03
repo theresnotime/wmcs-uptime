@@ -176,6 +176,7 @@ let needSetup = false;
     // ***************************
 
     // Entry Page
+    /*
     app.get("/", async (request, response) => {
         log.debug("entry", `Request Domain: ${request.hostname}`);
         log.info("server", request.headers);
@@ -194,7 +195,7 @@ let needSetup = false;
             response.redirect("/dashboard");
         }
     });
-
+    */
     if (isDev) {
         app.post("/test-webhook", async (request, response) => {
             log.debug("test", request.body);
@@ -218,7 +219,7 @@ let needSetup = false;
     // With Basic Auth using the first user's username/password
     app.get("/metrics", basicAuth, prometheusAPIMetrics());
 
-    app.use("/", express.static("dist"));
+    // app.use("/", express.static("dist"));
 
     // CAS
     app.use(
@@ -1451,7 +1452,7 @@ let needSetup = false;
 
         // Status Page Socket Handler for admin only
         statusPageSocketHandler(socket);
-        cloudflaredSocketHandler(socket);
+        // cloudflaredSocketHandler(socket);
         databaseSocketHandler(socket);
         proxySocketHandler(socket);
 
@@ -1496,7 +1497,7 @@ let needSetup = false;
     initBackgroundJobs(args);
 
     // Start cloudflared at the end if configured
-    await cloudflaredAutoStart(cloudflaredToken);
+    // await cloudflaredAutoStart(cloudflaredToken);
 
 })();
 
@@ -1705,7 +1706,7 @@ async function shutdownFunction(signal) {
     await Database.close();
 
     stopBackgroundJobs();
-    await cloudflaredStop();
+    // await cloudflaredStop();
 }
 
 function getClientIp(socket) {
