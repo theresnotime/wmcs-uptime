@@ -1,3 +1,11 @@
+.PHONY: build
+build:
+	git fetch --prune
+	git pull
+	npm install
+	npm run lint
+	npm run build
+
 .PHONY: ci
 ci:
 	git fetch --prune
