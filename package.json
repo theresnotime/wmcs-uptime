@@ -149,7 +149,7 @@
         "jest-puppeteer": "~6.1.0",
         "npm-check-updates": "^13.0.4",
         "postcss-html": "^1.4.1",
-        "puppeteer": "~14.2.0",
+        "puppeteer": "~14.2.1",
         "sass": "~1.52.2",
         "stylelint": "~14.8.5",
         "stylelint-config-standard": "~25.0.0",
