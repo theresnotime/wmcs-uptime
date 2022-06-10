@@ -143,7 +143,7 @@
         "core-js": "~3.22.8",
         "cross-env": "~7.0.3",
         "dns2": "~2.0.1",
-        "eslint": "~8.16.0",
+        "eslint": "~8.17.0",
         "eslint-plugin-vue": "^9.1.0",
         "jest": "~28.1.0",
         "jest-puppeteer": "~6.1.0",
