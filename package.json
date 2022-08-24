@@ -103,7 +103,7 @@
         "postcss-rtlcss": "~3.6.3",
         "postcss-scss": "~4.0.4",
         "prismjs": "^1.28.0",
-        "prom-client": "~13.2.0",
+        "prom-client": "~14.1.0",
         "prometheus-api-metrics": "~3.2.1",
         "qrcode": "~1.5.0",
         "redbean-node": "0.1.4",
