@@ -215,8 +215,12 @@ let needSetup = false;
     // Basic Auth Router here
 
     // Prometheus API metrics  /metrics
-    // With Basic Auth using the first user's username/password
-    app.get("/metrics", basicAuth, prometheusAPIMetrics());
+    if (await setting("anonMetrics")) {
+        app.get("/metrics", prometheusAPIMetrics());
+    } else {
+        // With Basic Auth using the first user's username/password
+        app.get("/metrics", basicAuth, prometheusAPIMetrics());
+    }
 
     app.use("/", express.static("dist"));
 
