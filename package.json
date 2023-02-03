@@ -136,7 +136,7 @@
         "@types/bootstrap": "~5.1.12",
         "@vitejs/plugin-legacy": "~1.8.2",
         "@vitejs/plugin-vue": "~1.10.2",
-        "@vue/compiler-sfc": "~3.2.36",
+        "@vue/compiler-sfc": "~3.2.47",
         "aedes": "^0.47.0",
         "babel-plugin-rewire": "~1.2.0",
         "concurrently": "^7.2.1",
